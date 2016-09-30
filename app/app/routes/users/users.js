@@ -12,7 +12,7 @@ function usersController(angular, app) {
 
         function init() {
             $http
-                .get('http://localhost:1337/user')
+                .get('./dist/php/users.php',{params:{data:"data"}})
                 .success(function (response) {
                     self.userlist = response;
                 })

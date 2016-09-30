@@ -10,7 +10,7 @@ function registerController(angular, app) {
     function registerCtrl($http,$state) {
         var self = this; //jshint ignore:line
         function register(){
-            $http.post('http://localhost:1337/user/create?username='+self.user.username+'&password='+ self.user.password)
+            $http.post('./dist/php/users.php',{data:'data'})
             .success(function(response){
                 $state.go('users');
             })
