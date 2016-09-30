@@ -19,9 +19,12 @@ function navbarDirective(angular, app) {
         }
         function controller() {
             var self = this; // jshint:ignore
-
+            function logout(){
+                sessionStorage.clear();
+            }
             function init() {
-
+                self.isLogged = sessionStorage.getItem('isLogged') || false;
+                self.logout = logout;
             }
             init();
         }

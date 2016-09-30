@@ -2,15 +2,15 @@ function homeController(angular, app) {
     'use strict';
 
     'use angular template'; //jshint ignore:line
-   
+
     app.controller('homeCtrl', homeCtrl);
 
-    homeCtrl.$inject = [];
+    homeCtrl.$inject = ['$http'];
 
-    function homeCtrl(){
+    function homeCtrl($http) {
         var self = this; //jshint ignore:line
 
-        function init(){
+        function init() {
             self.greetings = "Hello App!";
         }
         init();
